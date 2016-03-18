@@ -1,6 +1,7 @@
 package cn.zjnktion.billy.handler;
 
 import cn.zjnktion.billy.context.Context;
+import cn.zjnktion.billy.context.IdleType;
 
 /**
  * 处理由billy驱动的所有事件。
@@ -29,8 +30,9 @@ public interface Handler {
     /**
      * 上下文超时
      * @param context
+     * @param idleType
      */
-    void contextIdle(Context context) throws Exception;
+    void contextIdle(Context context, IdleType idleType) throws Exception;
 
     /**
      * 当接收到一个消息的时候被调用

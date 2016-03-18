@@ -2,6 +2,9 @@ package cn.zjnktion.billy.context;
 
 import cn.zjnktion.billy.engine.Engine;
 import cn.zjnktion.billy.filter.FilterChain;
+import cn.zjnktion.billy.future.CloseFuture;
+import cn.zjnktion.billy.future.ReadFuture;
+import cn.zjnktion.billy.future.WriteFuture;
 import cn.zjnktion.billy.handler.Handler;
 
 /**
@@ -56,5 +59,13 @@ public interface Context {
      * @return
      */
     boolean containsAttribute(Object key);
+
+    ReadFuture read();
+
+    WriteFuture write(Object msg);
+
+    CloseFuture close();
+
+    CloseFuture closeImmediately();
 
 }
