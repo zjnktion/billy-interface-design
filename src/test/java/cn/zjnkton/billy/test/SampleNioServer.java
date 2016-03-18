@@ -35,7 +35,11 @@ public class SampleNioServer {
         this.serverChannel.register(this.selector, SelectionKey.OP_ACCEPT);
         System.out.println("server binding success");
         while (true) {
-            selector.select();
+            selector.select(5000);
+            Iterator<SelectionKey> keyIterator = selector.keys().iterator();
+            while (keyIterator.hasNext()) {
+                System.out.println(keyIterator.next().interestOps());
+            }
             Iterator<SelectionKey> itr = this.selector.selectedKeys().iterator();
             while (itr.hasNext()) {
                 SelectionKey key = itr.next();
@@ -50,6 +54,7 @@ public class SampleNioServer {
             ServerSocketChannel serverChannel = (ServerSocketChannel) key.channel();
             SocketChannel channel = serverChannel.accept();
             channel.configureBlocking(false);
+            channel.register(this.selector, SelectionKey.OP_WRITE);
             channel.register(this.selector, SelectionKey.OP_READ);
         } else if (key.isReadable()) {
             SocketChannel channel = (SocketChannel) key.channel();
