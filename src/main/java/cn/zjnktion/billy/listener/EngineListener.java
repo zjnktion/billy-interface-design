@@ -1,9 +1,9 @@
-package cn.zjnktion.billy.core.listener;
+package cn.zjnktion.billy.listener;
 
-import cn.zjnktion.billy.core.engine.Engine;
+import cn.zjnktion.billy.engine.Engine;
 
 /**
- * {@link cn.zjnktion.billy.core.engine.Engine} 事件监听器
+ * {@link Engine} 事件监听器
  * Created by zhengjn on 2016/3/18.
  */
 public interface EngineListener {
