@@ -17,10 +17,10 @@ public interface EngineMetainfo {
     String getEngineName();
 
     /**
-     * 返回通讯类型名称（例如： "nio", "bio", "arp" 和 "aio" 等）
+     * 返回通讯类型（例如： "nio", "oio", "arp" 和 "aio" 等）
      * @return
      */
-    String getTransportTypeName();
+    TransportType getTransportType();
 
     /**
      * 判断引擎底层链路是否有断包数据（是否需要粘包处理）
