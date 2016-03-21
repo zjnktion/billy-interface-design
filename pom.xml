@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.zjnktion.billy</groupId>
-    <artifactId>billy</artifactId>
+    <artifactId>billy-interface-design</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
